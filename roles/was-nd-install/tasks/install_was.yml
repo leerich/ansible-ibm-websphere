@@ -17,10 +17,11 @@
     mode:        0755
     #checksum:    sha256:{{ item.check_sum }}
   with_items:    "{{ __was_files }}"
+  tags: download
 
 - name:          Extract WAS ND V8.5.5 Files
   unarchive:
-    src:         "{{ __tmp_dir }}/{{ item.file_name }}"
+    src:         "{{ __tmp_dir }}/{{ item.file_name }}" 
     dest:        "{{ __tmp_dir }}/"
     copy:        no
   with_items:    "{{ __was_files }}"
