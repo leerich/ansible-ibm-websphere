@@ -26,6 +26,7 @@
     copy:        no
   with_items:    "{{ __was_files }}"
   tags: skip
+  ignore_errors: yes
 
 - name:          Generate WAS Response file
   template:
