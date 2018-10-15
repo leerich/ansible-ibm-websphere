@@ -13,11 +13,6 @@
 - name:                    Install WebSphere Application Server - Network Deployment
   hosts:                   all
 
-  roles:
-    - roles/installation-manager-install
-    - roles/was-nd-install
-    - roles/was-nd-fix-install
-    - roles/was-java-install
   vars:
 
 
@@ -33,6 +28,13 @@
     iim_install_location: "/opt/IBM/InstallationManager"
     was_install_location: "/opt/IBM/WebSphere/AppServer"
     imshared_location:    "/opt/IBM/IMShared"
+
+  roles:
+    - roles/installation-manager-install
+    - roles/was-nd-install
+    - roles/was-nd-fix-install
+    - roles/was-java-install
+  
 
     #was_version:          "8.5.5000.20130514_1044"
     #was_files:
