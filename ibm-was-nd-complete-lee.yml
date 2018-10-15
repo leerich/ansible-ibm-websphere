@@ -13,28 +13,16 @@
 - name:                    Install WebSphere Application Server - Network Deployment
   hosts:                   all
 
-  vars:
-
-
-    __this_version: 1.7.0.20130828_2012
-    __bin_file: agent.installer.linux.gtk.x86_64_1.7.0.20130828_2012.zip
-    __was_version: "com.ibm.websphere.BASETRIAL.v85"
-    __version_check:        "Installed com.ibm.websphere.BASETRIAL.v85"
-    __was_files:
-      - { file_name: Websphere.zip, check_sum: b1333962ba4b25c8632c7e4c82b472350337e99febac8f70ffbd551ca3905e83 }
-      #- { file_name: 8.5.5-WS-WAS-FP013-part2.zip, check_sum: 440b7ed82089d43b1d45c1e908bf0a1951fed98f2542b6d37c8b5e7274c6b1c9 }
-      #- { file_name: 8.5.5-WS-WAS-FP013-part3.zip, check_sum: b73ae070656bed6399a113c2db9fb0abaf5505b0d41c564bf2a58ce0b1e0dcd2 }
-    tmp_dir:              "/opt/IBM/Binaries/was"
-    iim_install_location: "/opt/IBM/InstallationManager"
-    was_install_location: "/opt/IBM/WebSphere/AppServer"
-    imshared_location:    "/opt/IBM/IMShared"
-
   roles:
     - roles/installation-manager-install
     - roles/was-nd-install
     - roles/was-nd-fix-install
     - roles/was-java-install
-  
+  vars:
+    #tmp_dir:              "/opt/IBM/Binaries/was"
+    #iim_install_location: "/opt/IBM/InstallationManager"
+    #was_install_location: "/opt/IBM/WebSphere/AppServer"
+    #imshared_location:    "/opt/IBM/IMShared"
 
     #was_version:          "8.5.5000.20130514_1044"
     #was_files:
